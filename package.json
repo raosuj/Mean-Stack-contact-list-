@@ -1,13 +1,21 @@
 {
-  "name": "postup",
-  "version": "0.0.0",
-  "private": true,
-    "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-
-    "express": "~4.13.1"
-
-  }
+  "name": "contact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongojs": "^1.4.1",
+    "serve-static": "^1.10.0",
+    "connect": "^3.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
