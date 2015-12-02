@@ -8,6 +8,7 @@ $scope.bool = false;
 
 	$scope.bool = false;
 		$scope.contactlist = response;
+
 		$scope.contact="";
 
 	});
@@ -19,6 +20,7 @@ $scope.bool = false;
 		console.log($scope.contact);
 		$http.post('/controller', $scope.contact).success(function(response){
 			$scope.bool = false;
+			console.log("response"  + response);
 			refresh();
 		});
 	};
@@ -26,7 +28,7 @@ $scope.bool = false;
 	$scope.remove =function(id){
 		console.log(id);
 		$http.delete('/controller/' + id).success(function(response){
-$scope.bool = false;
+		$scope.bool = false;
 			console.log("From delete"+response);
 			refresh();
 		});

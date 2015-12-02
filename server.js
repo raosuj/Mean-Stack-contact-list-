@@ -1,7 +1,13 @@
 var express = require('express');
 var app = express();
-var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
+var mongojs = require('mongojs')
+var databaseUrl = 'mongodb://sujan:test@ds037234.mongolab.com:37234/meandb';
+var collection = ['contactlist'];
+
+
+
+var db = mongojs(databaseUrl, collection, {authMechanism: 'ScramSHA1'});
+//var db = mongojs('contactlist', ['contactlist']);
 var bodyparser = require('body-parser');
 
 
@@ -21,6 +27,8 @@ app.get('/controller', function(req,res){
 app.post('/controller', function(req,res){
 	console.log(req.body);
 	db.contactlist.insert(req.body, function(err, docs){
+		console.log("erro"  + err);
+		console.log("docs: " + docs); 
 		res.json(docs);
 	});
 
